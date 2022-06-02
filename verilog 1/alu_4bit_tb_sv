@@ -1,0 +1,27 @@
+module alu_4bit_tb();
+  
+  reg t_a[3:0],t_b[3:0],t_Cin;
+  reg [1:0]t_op;
+  wire t_S[3:0],t_Cout;
+  
+  alu_4bit DUT(.a(t_a),.b(t_b),.Cin(t_Cin),.op(t_op),.S(t_S),.Cout(t_Cout));
+  
+    initial
+    
+		begin
+          	$dumpfile("simulation.vcd");
+            $dumpvars(1);
+  
+          t_a[3]=0; t_a[2]=1; t_a[1]=0; t_a[0]=0;
+          t_b[3]=0;  t_b[2]=0;t_b[1]=1; t_b[0]=1;
+          
+  t_Cin=0; t_op = 2'b11;
+  #120
+  t_b[0]=0; t_a[0]=0;
+  
+                      $stop;
+        end
+  
+  
+  
+endmodule

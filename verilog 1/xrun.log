@@ -1,0 +1,59 @@
+xrun: 20.09-s003: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
+TOOL:	xrun	20.09-s003: Started on Jun 02, 2022 at 11:36:03 EDT
+xrun
+	-Q
+	-unbuffered
+	-timescale 1ns/1ns
+	-sysv
+	-access +rw
+	design.sv
+	testbench.sv
+	Top level design units:
+		DEMO_TB
+		mux4_tb
+		rip_fas_tb
+		alu_4bit_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+  FullAdder alu(.a(a),.b(b),.Cin(Cin),.s_op(op),.Cout(Cout),.S(Fa));
+                                             |
+xmelab: *W,CUVMPW (./alu.sv,8|45): port sizes differ in port connection(2/1) for the instance(alu_4bit_tb.DUT.alu1) .
+  FullAdder alu(.a(a),.b(b),.Cin(Cin),.s_op(op),.Cout(Cout),.S(Fa));
+                                             |
+xmelab: *W,CUVMPW (./alu.sv,8|45): port sizes differ in port connection(2/1) for the instance(alu_4bit_tb.DUT.alu2) .
+  FullAdder alu(.a(a),.b(b),.Cin(Cin),.s_op(op),.Cout(Cout),.S(Fa));
+                                             |
+xmelab: *W,CUVMPW (./alu.sv,8|45): port sizes differ in port connection(2/1) for the instance(alu_4bit_tb.DUT.alu3) .
+  FullAdder alu(.a(a),.b(b),.Cin(Cin),.s_op(op),.Cout(Cout),.S(Fa));
+                                             |
+xmelab: *W,CUVMPW (./alu.sv,8|45): port sizes differ in port connection(2/1) for the instance(alu_4bit_tb.DUT.alu4) .
+Loading snapshot worklib.DEMO_TB:sv .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /xcelium20.09/tools/xcelium/files/xmsimrc
+xcelium> run
+xmsim: *W,DFSET: $dumpfile has already been set to simulation.vcd.
+            File: ./mux4_tb.sv, line = 11, pos = 19
+           Scope: mux4_tb
+            Time: 0 FS + 0
+
+xmsim: *W,DFSET: $dumpfile has already been set to simulation.vcd.
+            File: ./rip_fas_tb.sv, line = 15, pos = 19
+           Scope: rip_fas_tb
+            Time: 0 FS + 0
+
+xmsim: *W,DFSET: $dumpfile has already been set to simulation.vcd.
+            File: ./alu_4bit_tb_sv, line = 12, pos = 19
+           Scope: alu_4bit_tb
+            Time: 0 FS + 0
+
+                   2: outputs changed to 0,x,x
+                   3: outputs changed to 0,0,x
+                   5: outputs changed to 0,0,0
+                  12: outputs changed to 1,0,0
+                  13: outputs changed to 1,1,0
+                  15: outputs changed to 1,1,1
+                  22: outputs changed to 0,1,1
+                  23: outputs changed to 0,0,1
+                  25: outputs changed to 0,0,0
+Simulation stopped via $stop(1) at time 120 NS + 0
+./alu_4bit_tb_sv:22                       $stop;
+xcelium> TOOL:	xrun	20.09-s003: Exiting on Jun 02, 2022 at 11:36:04 EDT  (total: 00:00:01)
